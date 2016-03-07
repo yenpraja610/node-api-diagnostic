@@ -1,23 +1,13 @@
 [![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
-# Diagnostic Template
+# Node API Diagnostic
 
-Use this template to structure your READMEs for diagnostics.
-
-Be sure to include a recent [`LICENSE`](LICENSE) and Markdown linter
-configuration ([`.remarkrc`](.remarkrc)). Also, include an appropriate
-`.gitignore`; these are usually found in specific technology templates, for
-example [js-template](https://www.github.com/ga-wdi-boston/js-template).
+This diagnostic assesses your ability to use the Node documentation and the File
+System module to write a command-line script using JavaScript.
 
 ## Prerequisites
 
--   Topics with which developers should be familiar with.
--   Prerequisites are "just-in-time", so if I have a prerequisite that mentions
-    Sass, I would **not** need to include CSS as a prerequisite.
--   [Links to previous materials](https://www.github.com/ga-wdi-boston/example)
-    are often useful.
--   In a diagnostic, it is useful to link to reference material, such as talk
-    repositories.
+-   [ga-wdi-boston/node-api](https://github.com/ga-wdi-boston/node-api)
 
 ## Instructions
 
@@ -25,7 +15,7 @@ example [js-template](https://www.github.com/ga-wdi-boston/js-template).
 1.  Change into the new directory.
 1.  Install dependencies.
 1.  Create and checkout a new branch, named `response`.
-1.  Follow the directions given in [diagnostic.md](diagnostic.md).
+1.  Follow the directions given in [`lib/diagnostic.js`](lib/diagnostic.js).
 1.  Before the alotted time is up, push to your fork and issue a pull request.
 
 Your pull request description should contain a "fist to five" for comfort and
@@ -49,14 +39,18 @@ This includes referencing talk materials, appropriate documentation, and
 searching for help online.
 
 You should be running `grunt nag` before diagnosing any bugs, since it finds
-some of the most common sources of errors. After `grunt nag` passes, you should
-run `grunt test` to run the included tests. Tests will tell you whether of not
-your responses are correct.
+some of the most common sources of errors. Test your script by running it
+against the provided example files:
 
-It's probably a good idea to include the above verbatim in each diagnostic.
-Remember to edit the link to the actual diagnostic file (it might be stored in a
-different directory or have a different extension). If tooling is not included
-in this diagnostic, feel free to remove that bit from these instructions.
+```sh
+# for example
+node lib/diagnostic.js integers.txt #=> 15
+```
+
+-   [`integers.txt`](integers.txt)
+-   [`numbers.txt`](numbers.txt)
+-   [`blanks.txt`](blanks.txt)
+-   [`strings.txt`](strings.txt)
 
 ## [License](LICENSE)
 
