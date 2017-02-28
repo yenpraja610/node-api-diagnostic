@@ -2,39 +2,31 @@
 
 const diagnostic = require('../lib/diagnostic');
 
+const createCallback = function (expectedSum, done) {
+  return function (error, sum) {
+    if (error || sum !== expectedSum) {
+      error = error || new Error(`sum is ${sum}`);
+    }
+
+    done(error);
+  };
+};
+
 describe('Sum of lines in integers.txt', function () {
   it('should equal 88', function (done) {
-    diagnostic.sumLines('data/integers.txt', function (error, sum) {
-      if (error || sum !== 88) {
-        error = error || new Error(`sum is ${sum}`);
-      }
-
-      done(error);
-    });
+    diagnostic.sumLines('data/integers.txt', createCallback(88, done));
   });
 });
 
 describe('Sum of lines in blanks.txt', function () {
   it('should equal 12', function (done) {
-    diagnostic.sumLines('data/blanks.txt', function (error, sum) {
-      if (error || sum !== 12) {
-        error = error || new Error(`sum is ${sum}`);
-      }
-
-      done(error);
-    });
+    diagnostic.sumLines('data/blanks.txt', createCallback(12, done));
   });
 });
 
 describe('Sum of lines in numbers.txt', function () {
   it('should equal 12.93', function (done) {
-    diagnostic.sumLines('data/numbers.txt', function (error, sum) {
-      if (error || sum !== 12.93) {
-        error = error || new Error(`sum is ${sum}`);
-      }
-
-      done(error);
-    });
+    diagnostic.sumLines('data/numbers.txt', createCallback(12.93, done));
   });
 });
 
